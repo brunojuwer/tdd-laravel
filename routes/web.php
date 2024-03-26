@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\SendNotificationsJob;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/send-notifications', function() {
-    
+    SendNotificationsJob::dispatch();
     return 'Envio dos e-mails está sendo processado, assim que finalizar você receberá uma notificação!';
 });
